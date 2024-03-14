@@ -1,5 +1,7 @@
 # Nxt Watch: A YouTube Clone 
 
+Explore On Web by Using **USER NAME**: rahul & **PASSWORD**: rahul@2021
+
 Nxt Watch is a web application inspired by YouTube, designed to provide users with a familiar video-sharing experience. It offers the following features:
 
 1. **User Authentication**:
