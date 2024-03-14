@@ -5,37 +5,22 @@ Explore my App On Web by Using
 **USER NAME**: rahul 
 **PASSWORD**: rahul@2021
 
-Nxt Watch is a web application inspired by YouTube, designed to provide users with a familiar video-sharing experience. It offers the following features:
 
-1. **User Authentication**:
-   - Users can create accounts, log in, and securely access the platform.
-   - Authentication ensures personalized recommendations and saved video lists.
+## Developed the Nxt Watch platform, a YouTube-inspired application where users can access various video
+## categories, such as Trending, Gaming, and Saved videos, and search for specific content while customising the
+## visual theme.
 
-2. **Video Categories**:
-   - Nxt Watch presents a variety of video categories:
-     - **Trending**: Displays popular videos based on real-time views and engagement.
-     - **Gaming**: Curates gaming-related content for enthusiasts.
-     - **Saved Videos**: Allows users to bookmark their favorite videos.
-     - **Search**: Enables users to find specific videos by keywords.
+## ● Crafted a responsive UI with React components for pages like Login, Home, Trending, Gaming, and
+Saved videos, utilising event handlers and form inputs.
 
-3. **Video Details**:
-   - Users can click on a video thumbnail to view detailed information about a video.
-   - Video details include the title, description, uploader, views, likes, and comments.
+## ● Established user authentication through username/password input and HTTP API calls, maintaining
+login state with JWT tokens and local storage.
 
-4. **Theme Toggle**:
-   - Nxt Watch supports both light and dark themes.
-   - Users can switch between themes based on their preference.
+## ● Enabled secure navigation using React Router components for protected routes, redirecting
+unauthenticated users to the login page.
 
-## Technologies Used:
-- **Frontend**:
-  - Built using REACT JS.
-  - Utilizes a responsive design for seamless viewing across devices.
-  - Integrates with APIs for video data retrieval.
-  - Implements theme toggling functionality.
-
-- **Backend**:
-  - Handles user authentication, video categorization, and search functionality.
-  - Communicates with a database (e.g., MySQL, PostgreSQL) to store user data and video metadata.
+## Technologies used: React JS, JavaScript, CSS, Bootstrap, Routing, REST API Calls, Local Storage, JWT
+Token, Authorization, Authentication
 
 ## Future Enhancements:
 - **User Profiles**: Allow users to customize their profiles, upload avatars, and manage subscriptions.
