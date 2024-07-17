@@ -1,27 +1,26 @@
 import {Component} from 'react'
-import {Redirect} from 'react-router-dom'
+
 import Cookies from 'js-cookie'
 
 class Login extends Component {
   state = {
     username: '',
     password: '',
-    submitStatus: false,
+    submitStatus: true,
     showPassword: false,
     errorMessage: '',
   }
 
   responseSuccess = jwtToken => {
     const {history} = this.props
-    console.log('success')
-    Cookies.set(('jwt_token': jwtToken), {
+    Cookies.set('jwt_token', jwtToken, {
       expires: 30,
     })
-    history.replace('/')
+    history.push('/')
   }
 
   responseFailure = errorMsg => {
-    this.setState({errorMessage: errorMsg})
+    this.setState({submitStatus: false, errorMessage: errorMsg})
   }
 
   clickSubmit = async event => {
@@ -38,7 +37,6 @@ class Login extends Component {
     if (response.ok === true) {
       this.responseSuccess(formattedResponse.jwt_token)
     } else {
-      console.log(formattedResponse.error_msg)
       this.responseFailure(formattedResponse.error_msg)
     }
   }
@@ -58,7 +56,13 @@ class Login extends Component {
   }
 
   render() {
-    const {username, password, showPassword, errorMessage} = this.state
+    const {
+      username,
+      password,
+      showPassword,
+      errorMessage,
+      submitStatus,
+    } = this.state
     const type = showPassword ? 'text' : 'password'
     return (
       <div>
@@ -88,7 +92,7 @@ class Login extends Component {
               onClick={this.changeShowPassword}
             />
             <label htmlFor="checkbox">Show Password</label>
-            {errorMessage && <p>{errorMessage}</p>}
+            {!submitStatus && <p>{errorMessage}</p>}
             <button type="submit">Login</button>
           </form>
         </div>
