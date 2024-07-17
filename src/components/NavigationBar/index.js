@@ -22,8 +22,6 @@ import {
 } from './styledComponents'
 
 class NavigationBar extends Component {
-  // const onClickTab = () => {}
-
   renderTabItems = () => (
     <ContextController.Consumer>
       {value => {
