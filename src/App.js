@@ -14,11 +14,19 @@ class App extends Component {
     activeTab: 'Home',
   }
 
-  toggleTheme = () => {}
+  toggleTheme = () => {
+    this.setState(prev => ({isDarkTheme: !prev.isDarkTheme}))
+  }
 
-  changeTab = () => {}
+  changeTab = tab => {
+    this.setState({activeTab: tab})
+  }
 
-  addVideo = () => {}
+  addVideo = video => {
+    this.setState(prev => ({
+      savedVideos: [...prev.savedVideos, video],
+    }))
+  }
 
   render() {
     const {savedVideos, isDarkTheme, activeTab} = this.state
@@ -28,9 +36,9 @@ class App extends Component {
           isDarkTheme,
           savedVideos,
           activeTab,
-          toggleTheme: this.toggleTheme(),
-          changeTab: this.changeTab(),
-          addVideo: this.addVideo(),
+          toggleTheme: this.toggleTheme,
+          changeTab: this.changeTab,
+          addVideo: this.addVideo,
         }}
       >
         <Switch>

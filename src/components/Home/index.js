@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Header from '../Header'
+import NavigationBar from '../NavigationBar'
 
 const apiStatus = {
   initial: 'INITIAL',
@@ -57,7 +58,7 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        {console.log(loadedVideos)}
+        <NavigationBar />
       </div>
     )
   }
