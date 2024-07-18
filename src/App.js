@@ -13,8 +13,6 @@ import ThemeAndVideoContext from './context/ThemeAndVideoContext'
 
 import './App.css'
 
-// Replace your code here
-
 class App extends Component {
   state = {
     savedVideos: [],
@@ -53,7 +51,6 @@ class App extends Component {
 
   render() {
     const {savedVideos, isDarkTheme, activeTab} = this.state
-    // console.log(savedVideos)
     return (
       <ThemeAndVideoContext.Provider
         value={{
