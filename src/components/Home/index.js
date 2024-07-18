@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+<<<<<<< HEAD
 import Loader from 'react-loader-spinner'
 
 import {AiOutlineClose, AiOutlineSearch} from 'react-icons/ai'
@@ -37,6 +38,22 @@ class Home extends Component {
     homeVideos: [],
     searchInput: '',
     apiStatus: apiStatusConstants.initial,
+=======
+import Header from '../Header'
+import NavigationBar from '../NavigationBar'
+
+const apiStatus = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inProgress: 'INPROGRESS',
+}
+class Home extends Component {
+  state = {
+    status: apiStatus.initial,
+    loadedVideos: [],
+    searchInput: '',
+>>>>>>> origin/main
     bannerDisplay: 'flex',
   }
 
@@ -46,8 +63,15 @@ class Home extends Component {
 
   getVideos = async () => {
     const {searchInput} = this.state
+<<<<<<< HEAD
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
+=======
+    this.setState({status: apiStatus.inProgress})
+    const jwtToken = Cookies.get('jwt_token')
+    // console.log(jwtToken)
+
+>>>>>>> origin/main
     const url = `https://apis.ccbp.in/videos/all?search=${searchInput}`
     const options = {
       headers: {
@@ -56,6 +80,7 @@ class Home extends Component {
       method: 'GET',
     }
     const response = await fetch(url, options)
+<<<<<<< HEAD
     if (response.ok) {
       const data = await response.json()
       const updatedData = data.videos.map(eachVideo => ({
@@ -117,10 +142,28 @@ class Home extends Component {
         return this.renderLoadingView()
       default:
         return null
+=======
+    const formattedData = await response.json()
+
+    if (response.ok === true) {
+      const updatedData = formattedData.videos.map(ele => ({
+        id: ele.id,
+        title: ele.title,
+        thumbnailUrl: ele.thumbnail_url,
+        channelName: ele.channel.name,
+        channelProfileImageUrl: ele.channel.profile_image_url,
+        viewCount: ele.view_count,
+        publishedAt: ele.published_at,
+      }))
+      this.setState({status: apiStatus.success, loadedVideos: updatedData})
+    } else {
+      this.setState({status: apiStatus.failure})
+>>>>>>> origin/main
     }
   }
 
   render() {
+<<<<<<< HEAD
     const {searchInput, bannerDisplay} = this.state
     return (
       <ThemeAndVideoContext.Consumer>
@@ -181,4 +224,15 @@ class Home extends Component {
   }
 }
 
+=======
+    const {loadedVideos} = this.state
+    return (
+      <div>
+        <Header />
+        <NavigationBar />
+      </div>
+    )
+  }
+}
+>>>>>>> origin/main
 export default Home

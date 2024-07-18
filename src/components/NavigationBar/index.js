@@ -4,7 +4,11 @@ import {HiFire} from 'react-icons/hi'
 import {SiYoutubegaming} from 'react-icons/si'
 import {CgPlayListAdd} from 'react-icons/cg'
 
+<<<<<<< HEAD
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
+=======
+import ContextController from '../../context/ContextController'
+>>>>>>> origin/main
 
 import {
   NavigationLgContainer,
@@ -22,10 +26,15 @@ import {
 } from './styledComponents'
 
 class NavigationBar extends Component {
+<<<<<<< HEAD
   // const onClickTab = () => {}
 
   renderTabItems = () => (
     <ThemeAndVideoContext.Consumer>
+=======
+  renderTabItems = () => (
+    <ContextController.Consumer>
+>>>>>>> origin/main
       {value => {
         const {isDarkTheme, activeTab, changeTab} = value
         const bgColor = isDarkTheme ? '#231f20' : '#f1f5f9'
@@ -159,7 +168,11 @@ class NavigationBar extends Component {
           </NavBar>
         )
       }}
+<<<<<<< HEAD
     </ThemeAndVideoContext.Consumer>
+=======
+    </ContextController.Consumer>
+>>>>>>> origin/main
   )
 
   render() {
